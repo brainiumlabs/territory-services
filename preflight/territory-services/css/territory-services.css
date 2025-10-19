@@ -17734,6 +17734,25 @@ i[class*=fa-instagram] {
   background-color: #cedfea;
 }
 
+.offcanvas.navbar-mobile {
+  background-color: #343741;
+  color: #fff;
+  width: min(90vw, 420px);
+  border: 0;
+}
+@media (min-width: 768px) {
+  .offcanvas.navbar-mobile {
+    display: none !important;
+  }
+}
+
+.offcanvas-backdrop {
+  background-color: #000;
+}
+.offcanvas-backdrop.show {
+  opacity: 0.35;
+}
+
 .table {
   border-radius: 8px;
   border: 2px solid #e8e8e8;

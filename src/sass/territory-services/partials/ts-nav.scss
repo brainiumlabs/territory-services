@@ -92,3 +92,24 @@
     }
   }
 }
+
+// Offcanvas mobile menu (right-hand drawer)
+.offcanvas.navbar-mobile {
+  background-color: $primary;
+  color: $white;
+  width: min(90vw, 420px);
+  border: 0;
+
+  // Prevent it appearing on larger screens (you already have desktop nav)
+  @media (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+// Backdrop dim
+.offcanvas-backdrop {
+  background-color: #000;
+  &.show {
+    opacity: 0.35;
+  }
+}
