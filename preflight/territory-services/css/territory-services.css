@@ -17279,23 +17279,23 @@ i[class*=fa-instagram] {
 @media (min-width: 768px) {
   .ntg-gateway .row > div:first-child {
     border-right: 1px solid #dee2e6;
-    padding-right: 2rem;
+    padding-right: 16px;
   }
 }
 @media (max-width: 767.98px) {
   .ntg-gateway .row > div:first-child {
     border-bottom: 1px solid #dee2e6;
-    padding-bottom: 1rem;
+    padding-bottom: 16px;
   }
 }
 @media (min-width: 768px) {
   .ntg-gateway .row > div:last-child {
-    padding-left: 2rem;
+    padding-left: 16px;
   }
 }
 @media (max-width: 767.98px) {
   .ntg-gateway .row > div:last-child {
-    padding-top: 1rem;
+    padding-top: 16px;
   }
 }
 .ntg-gateway .row > div > *:last-child {
@@ -17305,6 +17305,13 @@ i[class*=fa-instagram] {
   min-width: 180px;
   min-height: 52px;
   padding: 16px 32px;
+  border-width: 2px;
+  border-radius: 8px;
+}
+@media (max-width: 767.98px) {
+  .ntg-gateway .btn {
+    width: 100%;
+  }
 }
 
 .bg-primary {
