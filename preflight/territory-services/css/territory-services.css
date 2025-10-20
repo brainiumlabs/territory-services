@@ -17276,6 +17276,37 @@ i[class*=fa-instagram] {
   color: #c32aa3 !important;
 }
 
+@media (min-width: 768px) {
+  .ntg-gateway .row > div:first-child {
+    border-right: 1px solid #dee2e6;
+    padding-right: 2rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .ntg-gateway .row > div:first-child {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .ntg-gateway .row > div:last-child {
+    padding-left: 2rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .ntg-gateway .row > div:last-child {
+    padding-top: 1rem;
+  }
+}
+.ntg-gateway .row > div > *:last-child {
+  margin-bottom: 0;
+}
+.ntg-gateway .btn {
+  min-width: 180px;
+  min-height: 52px;
+  padding: 16px 32px;
+}
+
 .bg-primary {
   background-color: #343741 !important;
 }

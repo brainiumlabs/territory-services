@@ -1,0 +1,39 @@
+.ntg-gateway {
+  .row {
+    > div {
+      &:first-child {
+        @include media-breakpoint-up(md) {
+          border-right: 1px solid $border-color;
+          padding-right: 2rem;
+        }
+
+        @include media-breakpoint-down(md) {
+          border-bottom: 1px solid $border-color;
+          padding-bottom: 1rem;
+        }
+      }
+
+      &:last-child {
+        @include media-breakpoint-up(md) {
+          padding-left: 2rem;
+        }
+
+        @include media-breakpoint-down(md) {
+          padding-top: 1rem;
+        }
+      }
+
+      > * {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .btn {
+    min-width: 180px;
+    min-height: 52px;
+    padding: $padding-p-4 $padding-p-8;
+  }
+}
