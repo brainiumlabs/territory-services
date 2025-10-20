@@ -2,7 +2,7 @@
   --#{$prefix}alert-border-radius: 0;
   --#{$prefix}alert-border: 0;
   --bs-link-color: #{$body-color};
-  
+
   a {
     font-weight: bold;
     text-decoration: underline;
@@ -26,5 +26,58 @@
     height: 0.75em;
     opacity: 1;
     background-size: 0.75em;
+  }
+}
+
+.alert {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 12px;
+    background-color: transparent;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: $line-height-base;
+    margin-bottom: 0.25rem;
+
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  i {
+    color: $black;
+  }
+
+  > * {
+    color: $semantic-colours-text-default-charcoal-700;
+    font-size: $font-size-base;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-warning {
+    background-color: $ts-status-warning-bg;
+
+    &::before {
+      background-color: $ts-status-warning;
+    }
+
+    i {
+      color: $ts-status-warning;
+    }
   }
 }

@@ -15,11 +15,11 @@
 // Import NTGov theme
 @import "../../NTGov-DS/src/sass/ntgbase/variables.scss";
 
-//Territory services
-@import "territory-services/variables.scss";
-
 //Figma
 @import "../figma/sass/_variables.scss";
+
+//Territory services
+@import "territory-services/variables.scss";
 
 // Define NTG colours
 $primary: $semantic-colours-bg-primary-charcoal-500;

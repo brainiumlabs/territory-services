@@ -163,6 +163,9 @@ $ts-canary-yellow: #fcc000;
 $ts-ruby-red: #c43004;
 $ts-sky-blue: #107cc0;
 
+$ts-status-warning: #d6410a;
+$ts-status-warning-bg: #fbece7;
+
 //Grey
 $ts-grey-charcoal: #454347;
 $ts-grey-medium: #707070;
@@ -202,9 +205,9 @@ $spacers: (
 
 $border-radius: 8px;
 
-$font-family-sans-serif: "Roboto", system-ui, -apple-system, "Segoe UI",
-  Roboto, "Helvetica Neue", Arial, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";  //Removed "Noto Sans", "Lato", "Liberation Sans", 
+$font-family-sans-serif: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+  "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol", "Noto Color Emoji"; //Removed "Noto Sans", "Lato", "Liberation Sans",
 $font-icons: "Font Awesome 6 Pro";
 
 $font-size-lg: $font-size-base * 1.2;
@@ -273,6 +276,11 @@ $list-group-item-padding-y: 0.85rem;
 
 //Alert
 $alert-bg-scale: 0%;
+$alert-padding-y: 1rem;
+$alert-padding-x: 2rem;
+$alert-margin-bottom: 0;
+$alert-border-radius: $rounding-rounded-lg;
+$alert-border-width: 0;
 
 $container-max-widths: (
   sm: 540px,
