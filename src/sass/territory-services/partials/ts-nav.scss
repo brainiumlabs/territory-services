@@ -2,6 +2,10 @@
   $this: &;
   border: 0;
   border-radius: 0;
+  min-width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (min-width: 630px) and (max-width: 768px) {
     position: absolute;
@@ -12,12 +16,14 @@
 
   @media (max-width: 630px) {
     position: relative;
-  }
-
-  @include media-breakpoint-down(sm) {
     padding-left: calc(var(--bs-gutter-x) * 0.5);
     padding-right: 0;
   }
+
+  // @include media-breakpoint-down(sm) {
+  //   padding-left: calc(var(--bs-gutter-x) * 0.5);
+  //   padding-right: 0;
+  // }
 
   &:focus {
     outline: 2px solid #fff;
@@ -27,7 +33,14 @@
   &-icon {
     z-index: 1;
     position: relative;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3E%3C/svg%3E") !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='19' viewBox='0 0 19 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.2036 3.20361C18.936 2.47119 18.936 1.28174 18.2036 0.549316C17.4712 -0.183105 16.2817 -0.183105 15.5493 0.549316L9.37939 6.7251L3.20361 0.555176C2.47119 -0.177246 1.28174 -0.177246 0.549316 0.555176C-0.183105 1.2876 -0.183105 2.47705 0.549316 3.20947L6.7251 9.37939L0.555176 15.5552C-0.177246 16.2876 -0.177246 17.4771 0.555176 18.2095C1.2876 18.9419 2.47705 18.9419 3.20947 18.2095L9.37939 12.0337L15.5552 18.2036C16.2876 18.936 17.4771 18.936 18.2095 18.2036C18.9419 17.4712 18.9419 16.2817 18.2095 15.5493L12.0337 9.37939L18.2036 3.20361Z' fill='white'/%3E%3C/svg%3E") !important;
+    width: 16px;
+    height: 16px;
+
+    @include media-breakpoint-down(sm) {
+      width: 24px;
+      height: 24px;
+    }
 
     &::before {
       content: unset !important;
@@ -49,7 +62,7 @@
   }
 
   &.collapsed #{$this}-icon {
-    background-image: url("data:image/svg+xml,%3Csvg id='Group_309' data-name='Group 309' xmlns='http://www.w3.org/2000/svg' width='27' height='22' viewBox='0 0 27 22'%3E%3Crect id='Rectangle_141' data-name='Rectangle 141' width='27' height='4' fill='%23454347'/%3E%3Crect id='Rectangle_142' data-name='Rectangle 142' width='22' height='4' transform='translate(0 9)' fill='%23454347'/%3E%3Crect id='Rectangle_143' data-name='Rectangle 143' width='27' height='4' transform='translate(0 18)' fill='%23454347'/%3E%3C/svg%3E%0A") !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='27' height='23' viewBox='0 0 27 23' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.875C0 0.837891 0.837891 0 1.875 0H24.375C25.4121 0 26.25 0.837891 26.25 1.875C26.25 2.91211 25.4121 3.75 24.375 3.75H1.875C0.837891 3.75 0 2.91211 0 1.875ZM0 11.25C0 10.2129 0.837891 9.375 1.875 9.375H24.375C25.4121 9.375 26.25 10.2129 26.25 11.25C26.25 12.2871 25.4121 13.125 24.375 13.125H1.875C0.837891 13.125 0 12.2871 0 11.25ZM26.25 20.625C26.25 21.6621 25.4121 22.5 24.375 22.5H1.875C0.837891 22.5 0 21.6621 0 20.625C0 19.5879 0.837891 18.75 1.875 18.75H24.375C25.4121 18.75 26.25 19.5879 26.25 20.625Z' fill='%23343741'/%3E%3C/svg%3E") !important;
   }
 }
 
@@ -86,7 +99,7 @@
     &:focus,
     &.active {
       &::before {
-        background-color: #cedfea;
+        // background-color: #cedfea;
       }
       background-color: inherit;
     }
@@ -94,22 +107,19 @@
 }
 
 // Offcanvas mobile menu (right-hand drawer)
-.offcanvas.navbar-mobile {
-  background-color: $primary;
-  color: $white;
-  width: min(90vw, 420px);
-  border: 0;
-
-  // Prevent it appearing on larger screens (you already have desktop nav)
+.offcanvas {
   @media (min-width: 768px) {
     display: none !important;
   }
-}
 
-// Backdrop dim
-.offcanvas-backdrop {
-  background-color: #000;
-  &.show {
-    opacity: 0.35;
+  &-offset {
+    background-color: transparent;
+    width: 100%;
+    height: 58px;
+    transition: height 0.3s ease;
+
+    @include media-breakpoint-down(sm) {
+      height: 70px;
+    }
   }
 }

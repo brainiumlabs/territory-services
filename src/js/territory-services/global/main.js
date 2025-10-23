@@ -80,8 +80,8 @@ $(document).ready(function () {
   // Add Auth0 login/logout functionality
   auth0
     .createAuth0Client({
-      domain: "dev.ntg-dcdd.auth0app.com",
-      clientId: "rWBUjZnqbBIIrjen52u3Q3Lz6XGVsACL",
+      domain: "dev-ksjpo8ohb35kp4b7.au.auth0.com",
+      clientId: "x8W7MIENJPaWbBniAkEsEOd0QWVjWJKS",
       authorizationParams: {
         redirect_uri: window.location.origin,
       },

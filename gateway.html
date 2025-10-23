@@ -253,12 +253,6 @@
                 </div>
               </li>
               <li><a href="#" class="nav-link">Pay online</a></li>
-              <!-- <li>
-                <a href="gateway.html" class="nav-link" id="login">
-                  <i class="fa-light fa-circle-user"></i>
-                  Log in
-                </a>
-              </li> -->
               <li>
                 <div class="dropdown account">
                   <a
@@ -293,7 +287,7 @@
             </button>
 
             <button
-              class="navbar-toggler d-print-none d-md-none"
+              class="navbar-toggler d-print-none d-md-none collapsed"
               type="button"
               data-bs-toggle="offcanvas"
               data-bs-target="#mobileMenu"
@@ -366,6 +360,7 @@
         role="navigation"
         data-bs-scroll="true"
       >
+        <div class="offcanvas-offset"></div>
         <div class="offcanvas-body p-0">
           <div class="navbar-nav container">
             <a
@@ -407,6 +402,14 @@
               </a>
             </div>
             <a class="nav-link" aria-current="page" href="#">Pay online</a>
+            <a href="gateway.html" class="nav-link">
+              <i class="fa-light fa-circle-user"></i>
+              Account
+            </a>
+            <a href="gateway.html" class="nav-link">
+              <i class="link-icon fa-solid fa-right-from-bracket"></i>
+              Log out
+            </a>
           </div>
         </div>
       </nav>
@@ -456,7 +459,7 @@
               <div
                 class="d-flex flex-wrap flex-column flex-md-row justify-content-start gap-2 mb-4"
               >
-                <a href="#" class="btn btn-primary login">Login</a>
+                <a href="#" class="btn btn-primary login" id="login">Login</a>
                 <a href="#" class="btn btn-outline-dark">Create account</a>
               </div>
               <h3>Why create an account?</h3>

@@ -110,9 +110,16 @@
 
   .navbar {
     background-color: $white;
+    z-index: 10000;
 
-    @include media-breakpoint-down(sm) {
+    @media (max-width: 630px) {
       padding: 0;
+    }
+
+    .container {
+      @media (max-width: 630px) {
+        max-width: 100%;
+      }
     }
   }
 
@@ -300,19 +307,23 @@
       }
 
       &.account {
-        li {
-          a {
-            .link-icon {
-              color: $body-color;
-              width: unset;
-            }
-          }
+        .dropdown-menu {
+          width: 200px;
 
-          &:hover,
-          &:focus-within {
+          li {
             a {
               .link-icon {
-                color: $white;
+                color: $body-color;
+                width: unset;
+              }
+            }
+
+            &:hover,
+            &:focus-within {
+              a {
+                .link-icon {
+                  color: $white;
+                }
               }
             }
           }
