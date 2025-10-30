@@ -438,6 +438,14 @@
 
     <main id="content" class="ntg-body">
       <div class="container">
+        <div id="logoutAlert" class="alert alert-success my-4" role="alert">
+          <h2>
+            <i class="fa-solid fa-circle-check"></i>You have been logged out.
+          </h2>
+        </div>
+      </div>
+
+      <div class="container">
         <div class="alert alert-warning my-4" role="alert">
           <h2><i class="fa-solid fa-circle-exclamation"></i>Planned outage</h2>
           <p>
@@ -480,6 +488,57 @@
           </div>
         </div>
       </section>
+
+      <div class="container my-4">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#sessionTimeoutModal"
+        >
+          Session timeout modal
+        </button>
+      </div>
+
+      <div
+        class="modal fade"
+        id="sessionTimeoutModal"
+        tabindex="-1"
+        aria-labelledby="sessionTimeoutModal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="sessionTimeoutModal">
+                Your session has timed out
+              </h5>
+            </div>
+            <div class="modal-body">
+              <p>
+                There has been no activity for the last 30 minutes or more. For
+                your security, your session has ended.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-outline-dark"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                id="modalLoginButton"
+                type="button"
+                class="btn btn-primary"
+              >
+                Log In
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer

@@ -1,0 +1,29 @@
+.modal {
+  &-dialog {
+    .btn {
+      min-width: 180px;
+      min-height: 52px;
+      padding: $padding-p-4 $padding-p-8;
+      border-width: 2px;
+      border-radius: $rounding-rounded-lg;
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+    }
+  }
+
+  &-header {
+    padding: 1.5rem 2rem 0 2rem;
+  }
+
+  &-body {
+    padding: 1.5rem 2rem;
+  }
+
+  &-footer {
+    padding: 0 2rem 1.5rem 2rem;
+    justify-content: flex-start;
+    flex-wrap: wrap-reverse;
+  }
+}

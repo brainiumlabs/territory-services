@@ -7191,7 +7191,7 @@ textarea.form-control-lg {
   --bs-modal-color: ;
   --bs-modal-bg: #fff;
   --bs-modal-border-color: var(--bs-border-color-translucent);
-  --bs-modal-border-width: 1px;
+  --bs-modal-border-width: 0;
   --bs-modal-border-radius: 0.5rem;
   --bs-modal-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --bs-modal-inner-border-radius: calc(0.5rem - 1px);
@@ -7199,12 +7199,12 @@ textarea.form-control-lg {
   --bs-modal-header-padding-y: 1rem;
   --bs-modal-header-padding: 1rem 1rem;
   --bs-modal-header-border-color: var(--bs-border-color);
-  --bs-modal-header-border-width: 1px;
+  --bs-modal-header-border-width: 0;
   --bs-modal-title-line-height: 1.5;
   --bs-modal-footer-gap: 0.5rem;
   --bs-modal-footer-bg: ;
   --bs-modal-footer-border-color: var(--bs-border-color);
-  --bs-modal-footer-border-width: 1px;
+  --bs-modal-footer-border-width: 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -17403,7 +17403,7 @@ i[class*=fa-instagram] {
 }
 .ntg-header .navbar {
   background-color: #fff;
-  z-index: 10000;
+  z-index: 1049;
 }
 @media (max-width: 630px) {
   .ntg-header .navbar {
@@ -18837,6 +18837,15 @@ main ul.marker-chevron li::before {
 .alert-warning i {
   color: #d6410a;
 }
+.alert-success {
+  background-color: #e8f2e8;
+}
+.alert-success::before {
+  background-color: #107810;
+}
+.alert-success i {
+  color: #107810;
+}
 
 /*
 -----------------------------
@@ -19371,6 +19380,30 @@ Alerts
 }
 .ntg-image-cards.bg-ntg-background-alt .card {
   border: none;
+}
+
+.modal-dialog .btn {
+  min-width: 180px;
+  min-height: 52px;
+  padding: 16px 32px;
+  border-width: 2px;
+  border-radius: 8px;
+}
+@media (max-width: 767.98px) {
+  .modal-dialog .btn {
+    width: 100%;
+  }
+}
+.modal-header {
+  padding: 1.5rem 2rem 0 2rem;
+}
+.modal-body {
+  padding: 1.5rem 2rem;
+}
+.modal-footer {
+  padding: 0 2rem 1.5rem 2rem;
+  justify-content: flex-start;
+  flex-wrap: wrap-reverse;
 }
 
 .ntg-rich-media {

@@ -80,4 +80,16 @@
       color: $ts-status-warning;
     }
   }
+
+  &-success {
+    background-color: $ts-status-success-bg;
+
+    &::before {
+      background-color: $ts-status-success;
+    }
+
+    i {
+      color: $ts-status-success;
+    }
+  }
 }

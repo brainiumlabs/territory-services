@@ -165,6 +165,8 @@ $ts-sky-blue: #107cc0;
 
 $ts-status-warning: #d6410a;
 $ts-status-warning-bg: #fbece7;
+$ts-status-success: #107810;
+$ts-status-success-bg: #e8f2e8;
 
 //Grey
 $ts-grey-charcoal: #454347;
@@ -281,6 +283,11 @@ $alert-padding-x: 2rem;
 $alert-margin-bottom: 0;
 $alert-border-radius: $rounding-rounded-lg;
 $alert-border-width: 0;
+
+//Modal
+$modal-content-border-width: 0;
+$modal-header-border-width: 0;
+$modal-footer-border-width: 0;
 
 $container-max-widths: (
   sm: 540px,
