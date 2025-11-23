@@ -1,103 +1,107 @@
 .btn:not(.btn-tertiary):not(.btn-primary):not(.btn-outline-primary) {
-    &:focus {
-        box-shadow: 0 0 0 0.09em #fff, 0 0 0 0.2em #000;
-    }
+  &:focus {
+    box-shadow: 0 0 0 0.09em #fff, 0 0 0 0.2em #000;
+  }
 }
 
 .btn {
-    &:not(.btn-tertiary):hover {
-        box-shadow: 0 5px 8px rgba(0,0,0,0.25);
+  --btn-border-width: 2px;
+
+  &:not(.btn-tertiary):hover {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
+  }
+
+  &-primary {
+    --bs-btn-color: #ffffff;
+    --bs-btn-hover-color: var(--bs-btn-color);
+    --bs-btn-active-color: var(--bs-btn-color);
+
+    --bs-btn-bg: #{$secondary};
+    --bs-btn-border-color: #{$secondary};
+    --bs-btn-hover-bg: #{$secondary-mid};
+    --bs-btn-hover-border-color: #{$secondary-mid};
+    --bs-btn-active-bg: #{$secondary-dark};
+    --bs-btn-active-border-color: #{$secondary-dark};
+    --bs-btn-focus-shadow-rgb: 250, 100, 0;
+
+    --bs-btn-disabled-color: var(--bs-btn-color);
+    --bs-btn-disabled-bg: #{$ts-grey-medium};
+    --bs-btn-disabled-border-color: #{$ts-grey-medium};
+    --bs-btn-disabled-opacity: 1;
+
+    &:focus-visible {
+      background-color: var(--bs-btn-bg);
+      border-color: var(--bs-btn-bg);
+    }
+  }
+
+  &-outline-primary {
+    --bs-btn-color: #{$secondary};
+    --bs-btn-border-color: #{$secondary};
+    --bs-btn-hover-color: #{$white};
+    --bs-btn-active-color: #{$white};
+
+    --bs-btn-hover-bg: #{$secondary-mid};
+    --bs-btn-hover-border-color: #{$secondary-mid};
+    --bs-btn-active-bg: #{$secondary-dark};
+    --bs-btn-active-border-color: #{$secondary-dark};
+    --bs-btn-focus-shadow-rgb: 250, 100, 0;
+
+    --bs-btn-disabled-color: #{$white};
+    --bs-btn-disabled-bg: #{$ts-grey-medium};
+    --bs-btn-disabled-border-color: #{$ts-grey-medium};
+    --bs-btn-disabled-opacity: 1;
+
+    &:focus-visible {
+      background-color: #{$secondary};
+      border-color: #{$secondary};
+    }
+  }
+
+  &-tertiary {
+    --bs-btn-color: #{$primary};
+    --bs-btn-font-weight: normal;
+    --bs-btn-hover-color: var(--bs-btn-color);
+    --bs-btn-active-color: var(--bs-btn-color);
+    --bs-btn-disabled-color: var(--bs-btn-color);
+    --bs-btn-disabled-border-color: transparent;
+    --bs-btn-padding-x: 0;
+    --bs-btn-padding-y: 0;
+    border-radius: 0.25px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
     }
 
-    &-primary {
-        --bs-btn-color: #FFFFFF;
-        --bs-btn-hover-color: var(--bs-btn-color);
-        --bs-btn-active-color: var(--bs-btn-color);
+    &:focus {
+      outline: 3px solid #fad0bb;
+      outline-offset: 10px;
+    }
+  }
 
-        --bs-btn-bg: #{$secondary};
-        --bs-btn-border-color: #{$secondary};
-        --bs-btn-hover-bg: #{$secondary-mid};
-        --bs-btn-hover-border-color: #{$secondary-mid};
-        --bs-btn-active-bg: #{$secondary-dark};
-        --bs-btn-active-border-color: #{$secondary-dark};
-        --bs-btn-focus-shadow-rgb: 250, 100, 0;
+  &-arrow {
+    &::after {
+      @extend .font-awesome-family-pro;
+      content: "\f178";
+      margin-left: 0.5rem;
+    }
+  }
 
-        --bs-btn-disabled-color: var(--bs-btn-color);
-        --bs-btn-disabled-bg: #{$ts-grey-medium};
-        --bs-btn-disabled-border-color: #{$ts-grey-medium};
-        --bs-btn-disabled-opacity: 1;
-        
-        &:focus-visible {
-            background-color: var(--bs-btn-bg);
-            border-color: var(--bs-btn-bg);
-        }
+  &-edit {
+    &::after {
+      @extend .font-awesome-family-pro;
+      content: "\f044";
+      margin-left: 0.5rem;
     }
 
-    &-outline-primary {
-        --bs-btn-color: #{$secondary};
-        --bs-btn-border-color: #{$secondary};
-        --bs-btn-hover-color: #{$white};
-        --bs-btn-active-color: #{$white};
-
-        --bs-btn-hover-bg: #{$secondary-mid};
-        --bs-btn-hover-border-color: #{$secondary-mid};
-        --bs-btn-active-bg: #{$secondary-dark};
-        --bs-btn-active-border-color: #{$secondary-dark};
-        --bs-btn-focus-shadow-rgb: 250, 100, 0;
-
-        --bs-btn-disabled-color: #{$white};
-        --bs-btn-disabled-bg: #{$ts-grey-medium};
-        --bs-btn-disabled-border-color: #{$ts-grey-medium};
-        --bs-btn-disabled-opacity: 1;
-
-        &:focus-visible {
-            background-color:  #{$secondary};
-            border-color: #{$secondary};
-        }
+    &-reverse {
+      &::before {
+        @extend .font-awesome-family-pro;
+        content: "\f044";
+        margin-right: 0.5rem;
+      }
     }
-
-    &-tertiary {
-        --bs-btn-color: #{$primary};
-        --bs-btn-font-weight: normal;
-        --bs-btn-hover-color: var(--bs-btn-color);
-        --bs-btn-active-color: var(--bs-btn-color);
-        --bs-btn-disabled-color: var(--bs-btn-color);
-        --bs-btn-disabled-border-color: transparent;
-        --bs-btn-padding-x: 0;
-        --bs-btn-padding-y: 0;
-        border-radius: 0.25px;
-
-        &:hover, &:focus, &:active {
-            text-decoration: underline;
-        }
-
-        &:focus {
-            outline: 3px solid #FAD0BB;
-            outline-offset: 10px;
-        }
-    }
-
-    &-arrow {
-        &::after {
-            @extend .font-awesome-family-pro;
-            content: "\f178";
-            margin-left: 0.5rem;
-        }
-    }
-
-    &-edit {
-        &::after {
-            @extend .font-awesome-family-pro;
-            content: "\f044";
-            margin-left: 0.5rem;
-        }
-
-        &-reverse {
-            &::before {
-                @extend .font-awesome-family-pro;
-                content: "\f044";
-                margin-right: 0.5rem;
-            }
-        }
-    }
+  }
 }
