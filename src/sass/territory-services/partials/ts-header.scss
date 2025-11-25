@@ -212,16 +212,34 @@
       padding: 24px 1rem 24px;
       font-weight: bold;
       color: $body-color;
+      position: relative;
+
+      &::before {
+        content: "";
+        background-color: $ts-blue;
+        height: 4px;
+        position: absolute;
+        left: 1rem;
+        right: 1rem;
+        bottom: 12px;
+        transform: scaleX(0);
+        transition: 0.2s transform ease-in-out;
+      }
 
       &:hover,
       &:active,
-      &:focus,
+      // &:focus,
       &.dropdown-toggle.show {
-        background-color: $primary;
-        color: $white;
+        background-color: $white;
+        color: $body-color;
+
+        &::before {
+          transform: scaleX(1);
+        }
 
         &::after {
-          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='0.75em' viewBox='0 0 512 512' fill='%23FFFFFF'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E");
+          // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='0.75em' viewBox='0 0 512 512' fill='%23454347'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E");
+          transform: rotate(180deg);
         }
       }
 
@@ -272,14 +290,7 @@
 
           &:hover,
           &:focus-within {
-            background-color: $ts-grey-charcoal; //$ts-teal-blue
-            a {
-              color: $white;
-            }
-
-            .link-icon {
-              color: $white;
-            }
+            background-color: $semantic-colours-bg-emphasis-blue-100; //$ts-teal-blue
           }
 
           a {

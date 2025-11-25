@@ -17502,13 +17502,28 @@ i[class*=fa-instagram] {
   padding: 24px 1rem 24px;
   font-weight: bold;
   color: #454347;
+  position: relative;
 }
-.ntg-header nav.nav-masthead a.nav-link:hover, .ntg-header nav.nav-masthead a.nav-link:active, .ntg-header nav.nav-masthead a.nav-link:focus, .ntg-header nav.nav-masthead a.nav-link.dropdown-toggle.show {
-  background-color: #343741;
-  color: #fff;
+.ntg-header nav.nav-masthead a.nav-link::before {
+  content: "";
+  background-color: #336699;
+  height: 4px;
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 12px;
+  transform: scaleX(0);
+  transition: 0.2s transform ease-in-out;
 }
-.ntg-header nav.nav-masthead a.nav-link:hover::after, .ntg-header nav.nav-masthead a.nav-link:active::after, .ntg-header nav.nav-masthead a.nav-link:focus::after, .ntg-header nav.nav-masthead a.nav-link.dropdown-toggle.show::after {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='0.75em' viewBox='0 0 512 512' fill='%23FFFFFF'%3E%3C!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --%3E%3Cpath d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E");
+.ntg-header nav.nav-masthead a.nav-link:hover, .ntg-header nav.nav-masthead a.nav-link:active, .ntg-header nav.nav-masthead a.nav-link.dropdown-toggle.show {
+  background-color: #fff;
+  color: #454347;
+}
+.ntg-header nav.nav-masthead a.nav-link:hover::before, .ntg-header nav.nav-masthead a.nav-link:active::before, .ntg-header nav.nav-masthead a.nav-link.dropdown-toggle.show::before {
+  transform: scaleX(1);
+}
+.ntg-header nav.nav-masthead a.nav-link:hover::after, .ntg-header nav.nav-masthead a.nav-link:active::after, .ntg-header nav.nav-masthead a.nav-link.dropdown-toggle.show::after {
+  transform: rotate(180deg);
 }
 .ntg-header nav.nav-masthead a.nav-link i {
   margin-right: 0.5rem;
@@ -17550,13 +17565,7 @@ i[class*=fa-instagram] {
   transition: 0.2s all ease-in-out;
 }
 .ntg-header nav.nav-masthead .dropdown-menu li:hover, .ntg-header nav.nav-masthead .dropdown-menu li:focus-within {
-  background-color: #454347;
-}
-.ntg-header nav.nav-masthead .dropdown-menu li:hover a, .ntg-header nav.nav-masthead .dropdown-menu li:focus-within a {
-  color: #fff;
-}
-.ntg-header nav.nav-masthead .dropdown-menu li:hover .link-icon, .ntg-header nav.nav-masthead .dropdown-menu li:focus-within .link-icon {
-  color: #fff;
+  background-color: #ebf0f5;
 }
 .ntg-header nav.nav-masthead .dropdown-menu li a {
   display: flex;
