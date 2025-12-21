@@ -4,7 +4,7 @@
       &:first-child {
         @include media-breakpoint-up(md) {
           border-right: 1px solid $border-color;
-          padding-right: $padding-p-4;
+          padding-right: 48px;
         }
 
         @include media-breakpoint-down(md) {
@@ -15,7 +15,7 @@
 
       &:last-child {
         @include media-breakpoint-up(md) {
-          padding-left: $padding-p-4;
+          padding-left: 48px;
         }
 
         @include media-breakpoint-down(md) {

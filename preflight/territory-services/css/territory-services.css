@@ -17024,7 +17024,7 @@ div[data-component=ntg-sticky-nav] {
   display: inline-block;
 }
 
-.btn:not(.btn-tertiary):not(.btn-primary):not(.btn-outline-primary):focus {
+.btn:not(.btn-tertiary):not(.btn-primary):not(.btn-outline-primary):not(.btn-outline-dark):focus {
   box-shadow: 0 0 0 0.09em #fff, 0 0 0 0.2em #000;
 }
 
@@ -17282,7 +17282,7 @@ i[class*=fa-instagram] {
 @media (min-width: 768px) {
   .ntg-gateway .row > div:first-child {
     border-right: 1px solid #dee2e6;
-    padding-right: 16px;
+    padding-right: 48px;
   }
 }
 @media (max-width: 767.98px) {
@@ -17293,7 +17293,7 @@ i[class*=fa-instagram] {
 }
 @media (min-width: 768px) {
   .ntg-gateway .row > div:last-child {
-    padding-left: 16px;
+    padding-left: 48px;
   }
 }
 @media (max-width: 767.98px) {
@@ -17522,11 +17522,11 @@ i[class*=fa-instagram] {
 .ntg-header nav.nav-masthead a.nav-link:hover::before, .ntg-header nav.nav-masthead a.nav-link:active::before, .ntg-header nav.nav-masthead a.nav-link.dropdown-toggle.show::before {
   transform: scaleX(1);
 }
-.ntg-header nav.nav-masthead a.nav-link:hover::after, .ntg-header nav.nav-masthead a.nav-link:active::after, .ntg-header nav.nav-masthead a.nav-link.dropdown-toggle.show::after {
+.ntg-header nav.nav-masthead a.nav-link.dropdown-toggle.show::after {
   transform: rotate(180deg);
 }
 .ntg-header nav.nav-masthead a.nav-link i {
-  margin-right: 0.5rem;
+  margin-right: 0;
 }
 .ntg-header nav.nav-masthead .dropdown-toggle.show {
   position: relative;
@@ -17594,7 +17594,7 @@ i[class*=fa-instagram] {
   width: unset;
 }
 .ntg-header nav.nav-masthead .dropdown.account .dropdown-menu li:hover a .link-icon, .ntg-header nav.nav-masthead .dropdown.account .dropdown-menu li:focus-within a .link-icon {
-  color: #fff;
+  color: #454347;
 }
 .ntg-header .link-chevron {
   display: flex;
@@ -17652,6 +17652,23 @@ i[class*=fa-instagram] {
 }
 .ntg-header .ntg-header-search button[type=submit]:hover {
   background: rgb(29.3333333333, 31.0256410256, 36.6666666667);
+}
+.ntg-header:has(.navbar-toggler:not(.collapsed)) {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+@media (max-width: 991.98px) {
+  body:has(.ntg-header .navbar-toggler:not(.collapsed)) {
+    padding-top: 58px;
+  }
+}
+@media (max-width: 575.98px) {
+  body:has(.ntg-header .navbar-toggler:not(.collapsed)) {
+    padding-top: 70px;
+  }
 }
 
 .nav-tabs {
@@ -17797,6 +17814,10 @@ i[class*=fa-instagram] {
 .navbar-mobile a.nav-link:hover, .navbar-mobile a.nav-link:focus, .navbar-mobile a.nav-link.active {
   background-color: inherit;
 }
+.navbar-mobile a.nav-link i {
+  margin-right: 0.5rem;
+}
+
 @media (min-width: 768px) {
   .offcanvas {
     display: none !important;
@@ -19394,6 +19415,9 @@ Alerts
   border: none;
 }
 
+.modal-dialog {
+  margin-top: 96px;
+}
 .modal-dialog .btn {
   min-width: 180px;
   min-height: 52px;
@@ -19407,15 +19431,20 @@ Alerts
   }
 }
 .modal-header {
-  padding: 1.5rem 2rem 0 2rem;
+  padding: 3rem 2rem 0 2rem;
 }
 .modal-body {
-  padding: 1.5rem 2rem;
+  padding: 2rem;
 }
 .modal-footer {
-  padding: 0 2rem 1.5rem 2rem;
+  padding: 0 2rem 3rem 2rem;
   justify-content: flex-start;
   flex-wrap: wrap-reverse;
+  gap: 0.5rem;
+}
+.modal-footer > * {
+  flex: 1;
+  margin: 0;
 }
 
 .ntg-rich-media {

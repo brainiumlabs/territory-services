@@ -38,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       let inactivityTimer;
 
+      const isAuthenticated = await auth0Client.isAuthenticated();
+
       // Handle desktop login button.
       if (loginDesktop) {
         loginDesktop.addEventListener("click", (e) => {
@@ -122,14 +124,40 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
+      document.querySelectorAll(".btn-login, .btn-register").forEach((btn) => {
+        const href = btn.getAttribute("href");
+
+        // Store the original href in a data attribute.
+        if (href && href !== "#" && href !== "") {
+          btn.dataset.href = href;
+        }
+
+        if (isAuthenticated) {
+          if (btn.dataset.href) {
+            // Keep the original href if the user is already authenticated.
+            btn.setAttribute("href", btn.dataset.href);
+          }
+        } else {
+          // Set the working href to the gateway login page so that it's right-click safe.
+          btn.setAttribute("href", "/service/login");
+        }
+      });
+
       // Handle login and register buttons added via content.
-      document.body.addEventListener("click", (e) => {
+      document.body.addEventListener("click", async (e) => {
         // Login button.
         if (e.target.matches(".btn-login")) {
           e.preventDefault();
-          const href = e.target.getAttribute("href");
-          const returnTo =
-            href && href !== "#" && href !== "" ? href : window.location.href; // Send the user to the href link set if it exists after authenticating, fallback to current page.
+
+          const href = e.target.dataset.href;
+          const returnTo = href ? href : window.location.href; // Send the user to the href link set if it exists after authenticating, fallback to current page.
+
+          // Send the user straight to the href link if already authenticated.
+          if (isAuthenticated) {
+            window.location.href = returnTo;
+            return;
+          }
+
           sessionStorage.setItem("postLoginReturnTo", returnTo);
           window.location.href = "/service/login"; // Send the user to the gateway login page.
         }
@@ -137,9 +165,15 @@ document.addEventListener("DOMContentLoaded", function () {
         // Register button.
         if (e.target.matches(".btn-register")) {
           e.preventDefault();
-          const href = e.target.getAttribute("href");
-          const returnTo =
-            href && href !== "#" && href !== "" ? href : window.location.href; // Send the user to the href link set if it exists after authenticating, fallback to current page.
+          const href = e.target.dataset.href;
+          const returnTo = href ? href : window.location.href; // Send the user to the href link set if it exists after authenticating, fallback to current page.
+
+          // Send the user straight to the href link if already authenticated.
+          if (isAuthenticated) {
+            window.location.href = returnTo;
+            return;
+          }
+
           sessionStorage.setItem("postLoginReturnTo", returnTo);
           window.location.href = "/service/login"; // Send the user to the gateway login page.
         }
@@ -184,16 +218,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const logoutAlert = document.getElementById("logoutAlert");
 
       if (localStorage.getItem("showLogoutAlert") === "true") {
+        localStorage.removeItem("showLogoutAlert");
         logoutAlert.style.display = "block";
         setTimeout(() => {
           logoutAlert.style.display = "none";
-          localStorage.removeItem("showLogoutAlert");
         }, 6000); // 6 seconds
       }
 
       // Trigger actions if the user is authenticated or not.
-      const isAuthenticated = await auth0Client.isAuthenticated();
-
       if (isAuthenticated) {
         // Show or hide header login and account elements.
         if (loginDesktop) loginDesktop.style.display = "none";

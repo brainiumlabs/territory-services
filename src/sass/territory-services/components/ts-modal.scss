@@ -1,5 +1,7 @@
 .modal {
   &-dialog {
+    margin-top: 96px;
+
     .btn {
       min-width: 180px;
       min-height: 52px;
@@ -14,16 +16,22 @@
   }
 
   &-header {
-    padding: 1.5rem 2rem 0 2rem;
+    padding: 3rem 2rem 0 2rem;
   }
 
   &-body {
-    padding: 1.5rem 2rem;
+    padding: 2rem;
   }
 
   &-footer {
-    padding: 0 2rem 1.5rem 2rem;
+    padding: 0 2rem 3rem 2rem;
     justify-content: flex-start;
     flex-wrap: wrap-reverse;
+    gap: 0.5rem;
+
+    > * {
+      flex: 1;
+      margin: 0;
+    }
   }
 }

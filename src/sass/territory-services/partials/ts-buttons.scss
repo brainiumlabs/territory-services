@@ -1,4 +1,6 @@
-.btn:not(.btn-tertiary):not(.btn-primary):not(.btn-outline-primary) {
+.btn:not(.btn-tertiary):not(.btn-primary):not(.btn-outline-primary):not(
+    .btn-outline-dark
+  ) {
   &:focus {
     box-shadow: 0 0 0 0.09em #fff, 0 0 0 0.2em #000;
   }
